@@ -15,14 +15,13 @@ def main():
     spam = input(">Please input the number of times you want to spam> ")
     spam = int(spam)
 
-   # webhook = DiscordWebhook(url=url, content=msg, username = botName)
+ 
 
 
     finel = json.dumps({'content':msg, 'username':botName})
 
 
     for i in range (spam):
-        #response = webhook.execute()
         req = requests.post(url, data=json.dumps(finel))
         time.sleep(1.5)
         print("sent ", i, " times!")
